@@ -42,7 +42,7 @@ export class AuthService {
   logoutUser() {
     this.jwtHelpers.getActiveJWT().subscribe({
       next: async (jwt: any): Promise<any> => {
-        this.jwtHelpers.addToBlacklist(jwt);   //To invalidate the JWT;;
+        this.jwtHelpers.addToBlacklist(jwt);   //To invalidate the JWT;
       },
       error: (err: any) => {
         this.logger.error("err>>>", err);
