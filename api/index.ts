@@ -3,7 +3,6 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from '../src/app.module';
 import { ValidationPipe } from '@nestjs/common';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-// npm install @vendia/serverless-express
 
 let server: any;
 
@@ -16,7 +15,6 @@ async function bootstrap() {
     }),
   );
 
-  // Swagger config
   const config = new DocumentBuilder()
     .setTitle('Hux-assessment-backend')
     .setDescription('API documentation for Hux developer test')
