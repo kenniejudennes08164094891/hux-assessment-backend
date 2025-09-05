@@ -4,7 +4,7 @@ import { CreateContactDto, PaginateDTO } from './dto/create-contact.dto';
 import { UpdateContactDto } from './dto/update-contact.dto';
 import { ApiTags, ApiResponse, ApiOperation, ApiQuery, ApiBearerAuth } from '@nestjs/swagger';    // For swagger API documentations
 import {Logger} from "@nestjs/common";
-import { JwtGuard } from 'src/guards/jwt/jwt.guard';
+import { JwtGuard } from '../guards/jwt/jwt.guard';
 
 @Controller('contact')
 @ApiTags('Contact Controller')

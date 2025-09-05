@@ -2,10 +2,10 @@ import { Injectable, Logger } from '@nestjs/common';
 import { CreateAuthDto } from './dto/create-auth.dto';
 import { UpdateAuthDto } from './dto/update-auth.dto';
 import { JwtService } from '@nestjs/jwt';
-import { secret } from 'src/utils/secret/secret.interface';
+import { secret } from '../utils/secret/secret.interface';
 import * as bcrypt from 'bcrypt';   //for hashing passwords     npm install bcrypt
 import * as jwt from 'jsonwebtoken';
-import { JwtHelpersService } from 'src/jwt-helpers/jwt-helpers.service';
+import { JwtHelpersService } from '../jwt-helpers/jwt-helpers.service';
 
 @Injectable()
 export class AuthService {

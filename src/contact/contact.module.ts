@@ -3,9 +3,9 @@ import { ContactService } from './contact.service';
 import { ContactController } from './contact.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Contact } from './entities/contact.entity';
-import { JwtGuard } from 'src/guards/jwt/jwt.guard';
+import { JwtGuard } from '../guards/jwt/jwt.guard';
 import { JwtService } from '@nestjs/jwt';
-import { JwtHelpersService } from 'src/jwt-helpers/jwt-helpers.service';
+import { JwtHelpersService } from '../jwt-helpers/jwt-helpers.service';
 
 @Module({
   imports: [ 

@@ -2,8 +2,8 @@ import { CanActivate, ExecutionContext, HttpException, HttpStatus, Injectable, U
 import { Observable } from 'rxjs';
 import { JwtService } from '@nestjs/jwt';
 import { Logger } from '@nestjs/common';
-import { secret } from 'src/utils/secret/secret.interface';
-import { JwtHelpersService } from 'src/jwt-helpers/jwt-helpers.service';
+import { secret } from '../../utils/secret/secret.interface';
+import { JwtHelpersService } from '../../jwt-helpers/jwt-helpers.service';
 
 @Injectable()
 export class JwtGuard implements CanActivate {

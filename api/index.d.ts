@@ -1,2 +1,1 @@
-import { IncomingMessage, ServerResponse } from 'http';
-export default function handler(req: IncomingMessage, res: ServerResponse): Promise<any>;
+export default function handler(req: any, res: any): Promise<any>;
