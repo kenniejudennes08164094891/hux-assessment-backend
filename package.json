@@ -1,6 +1,7 @@
 {
   "name": "hux-assessment-backend",
   "version": "0.0.1",
+   "type": "module",
   "description": "",
   "author": "",
   "private": true,
@@ -8,7 +9,7 @@
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "node dist/main.js",
+    "start": "node dist/src/main.js",
     "start:dev": "nest start --watch",
     "vercel:dev": "vercel dev",
     "start:debug": "nest start --debug --watch",

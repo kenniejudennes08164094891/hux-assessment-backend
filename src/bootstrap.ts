@@ -1,43 +1,18 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { ValidationPipe, INestApplication } from '@nestjs/common';
-import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import * as cors from 'cors';
+import { INestApplication, ValidationPipe } from '@nestjs/common';
 import { Express } from 'express';
+import * as cors from 'cors';
 
 let server: Express;
 
 export default async function bootstrap(): Promise<Express> {
   if (!server) {
     const app: INestApplication = await NestFactory.create(AppModule);
-
     app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
-
-    const config = new DocumentBuilder()
-      .setTitle('Hux-assessment-backend')
-      .setDescription('API documentation for Hux developer test')
-      .setVersion('1.0')
-      .addTag('Created by Omosehin Kehinde Jude')
-      .addBearerAuth()
-      .build();
-
-    const document = SwaggerModule.createDocument(app, config);
-    SwaggerModule.setup('api-docs', app, document);
-
-    app.use(
-      cors({
-        origin: '*',
-        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-        credentials: true
-      })
-    );
-
-    app.enableCors();
-
+    app.use(cors({ origin: '*', credentials: true }));
     await app.init();
-
-    server = app.getHttpAdapter().getInstance(); // Express instance
+    server = app.getHttpAdapter().getInstance();
   }
-
   return server;
 }
