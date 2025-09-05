@@ -28,7 +28,7 @@ import { JwtHelpersService } from './jwt-helpers/jwt-helpers.service';
 })
 export class AppModule {}
 
-//NPM Libraries used
+//NPM Libraries used 
 //Note: MySql was used because mongo DB Cluster creation at https://cloud.mongodb.com/v2 is now paid and no longer free.
 
 //npm install --save @nestjs/typeorm typeorm mysql2 
