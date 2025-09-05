@@ -5,8 +5,8 @@ let server: any;
 
 export default async function handler(req: any, res: any) {
   if (!server) {
-    const app = await bootstrap();
-    server = serverlessExpress({ app });
+    const expressApp = await bootstrap();
+    server = serverlessExpress({ app: expressApp });
   }
   return server(req, res);
 }
